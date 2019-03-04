@@ -1,0 +1,141 @@
+<ion-view>
+
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">{{ titre }}</h1>
+    </ion-header-bar>
+
+    <ion-header-bar class="bar-subheader item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Recherche par nom" ng-change="search()" ng-model="MMI.Nom"
+                autocomplete="off">
+        </label>
+    </ion-header-bar>
+
+    <ion-content>
+
+        <!--
+        <div class="ion-autocomplete-conteneur">
+
+            <input ion-autocomplete type="text" readonly="readonly" class="ion-autocomplete" autocomplete="off"
+                ng-model="myData" item-value-key="name" item-view-value-key="view" items-method="getTestItems(query)"
+                items-method-value-key="items" placeholder="Recherche ..." items-clicked-method="itemsClicked(callback)"
+                items-removed-method="itemsRemoved(callback)" max-selected-items="3"
+                select-items-label=" Sélectionnez vos vidéos ... "
+                selected-items-label="Vidéos Sélectionnées (max : 3) : " />
+
+        </div>
+        -->
+
+        <ion-scroll class="list" direction="y" overflow-scroll="true" class="padding">
+
+            <div class="list">
+
+                <div ng-repeat="MMI in myData | filter:MMI track by $index" class="item item-thumbnail-left item-icon-right"
+                    style="text-align: center;">
+
+                    <img src='{{ MMI.Photo }}' class="imgResponsive" />
+                    {{ MMI.Numero }}
+                    <br />
+                    {{ MMI.Prenom }}
+                    <br />
+                    {{ MMI.Nom }}
+                    <br />
+                    #{{ MMI.rang }}
+                    <!--
+                    <a href="#">
+                        <i class="icon ion-ios-arrow-forward"></i>
+                    </a>
+                    -->
+
+                    <br />
+                    <br />
+                    
+                    <div class="row colonneTable">
+                        <div class="col topTable">MODULE</div>
+                        <div class="col topTable">MOYENNE</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Gestion de projet</div>
+                        <div class="col moyenne">{{ MMI.MMM1107___Gestion_de_projet }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Algo et prog</div>
+                        <div class="col moyenne">{{ MMI.MMM1202___Algorithme_et_programmati }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">LV2</div>
+                        <div class="col moyenne">{{ MMI.MMM1102___Langues_vivantes_2 }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Théorie info / com</div>
+                        <div class="col moyenne">{{ MMI.MMM1103___Theor_info_et_comm }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Anglais</div>
+                        <div class="col moyenne">{{ MMI.MMM1101___Anglais }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Audiovisuelle</div>
+                        <div class="col moyenne">{{ MMI.MMM1206___Production_audiovisuelle }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Mercatique</div>
+                        <div class="col moyenne">{{ MMI.MMM1109___Env_jur__eco_mercat_organ }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Infographie</div>
+                        <div class="col moyenne">{{ MMI.MMM1204___Infographie }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">PPP</div>
+                        <div class="col moyenne">{{ MMI.MMM1108___PPP }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Service sur réseaux</div>
+                        <div class="col moyenne">{{ MMI.MMM1203___Services_sur_reseaux }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Culture technique</div>
+                        <div class="col moyenne">{{ MMI.MMMUE12___UE12_Cuture_techn_dev_mul }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Culture scientifique</div>
+                        <div class="col moyenne">{{ MMI.MMM1201___Culture_scient_trait_info }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Expression artistique</div>
+                        <div class="col moyenne">{{ MMI.MMM1104___Esthet_et_expr_artistique }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Culture communication</div>
+                        <div class="col moyenne">{{ MMI.MMMUE11___UE11_Comm_Cult_Conn_env }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">MEL</div>
+                        <div class="col moyenne">{{ MMI.MMMELS1___Module_libre_enseign_S1 }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Ecriture media numérique</div>
+                        <div class="col moyenne">{{ MMI.MMM1105___Ecriture_medias_numerique }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Communication</div>
+                        <div class="col moyenne">{{ MMI.MMM1106___Expr__comm_expr_ecrite_or }}</div>
+                    </div>
+                    <div class="row colonneTable">
+                        <div class="col module">Intégration web</div>
+                        <div class="col moyenne">{{ MMI.MMM1205___Integration_Web }}</div>
+                    </div>
+
+                </div>
+            </div>
+        </ion-scroll>
+
+    </ion-content>
+
+    <ion-footer-bar align-title="center" class="bar-balanced menuNav">
+        <a class="button icon ion-home" ui-sref="home"></a>
+    </ion-footer-bar>
+
+</ion-view>

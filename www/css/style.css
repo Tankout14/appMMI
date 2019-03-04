@@ -1,1 +1,67 @@
 /* Empty. Add your own CSS if you like */
+
+.imgResponsive{
+	width:auto !important; 
+	height:100%; 
+}
+
+.menuNav{
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+}
+
+.modal {
+	top: 100px;
+}
+
+.item-complex .item-content, .item-radio .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 16px 16px 16px 16px;
+    border: none;
+    background-color: #fff;
+}
+  
+  .box {
+	width: 40%;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.2);
+	padding: 35px;
+	border: 2px solid #fff;
+	border-radius: 20px/50px;
+	background-clip: padding-box;
+	text-align: center;
+	margin-top: 50vh;
+	transform: translateY(-50%);
+  }
+  
+  @media screen and (max-width: 700px){
+	.box{
+	  width: 80%;
+	}
+  }
+
+
+.topTable {
+	text-align: center; 
+	font-size: x-small; 
+	font-style: italic;
+}
+
+.module {
+	text-align: center; 
+	font-size: small;
+}
+
+.moyenne {
+	text-align: center; 
+	font-size: small; 
+	font-weight: bold;
+}
+
+.colonneTable {
+	position: relative; 
+	width: 150%; 
+	left: -80px;
+}
